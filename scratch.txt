@@ -44,7 +44,7 @@ Commit to github:
 https://github.com/dgies/HelloWorldFlaskReact/
 
 TODO:
-Make API endpoint that hits other REST API, returns values
+~Make API endpoint that hits other REST API, returns values~
 Make PG table to hold results
 Make React save results in DB
 Make react use DB as cache

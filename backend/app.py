@@ -20,7 +20,12 @@ def get_agify(name):
     response = requests.get(url=url, params=params)
     if response.status_code == 200 and 'age' in response.json():
         print(response.json())
-        return jsonify({"message": f"The expected age of someone named {name} is {response.json()['age']} years."})
+        return jsonify({
+            # "message": f"The expected age of someone named {name} is {response.json()['age']} years.",
+            'name': name,
+            'age': response.json()['age'],
+            'count': response.json()['count']
+        })
     else:
         return jsonify({"message": "Something went wrong!"})
 
