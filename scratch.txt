@@ -1,0 +1,50 @@
+Installed HomeBrew via
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Installed GitHub CLI tools
+brew install gh
+
+Validate GH tools
+gh auth login
+gh repo clone dgies/incubator-airflow
+
+Install JetBrains PyCharm
+https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=mac
+
+Install Python 3.13.0 to augment installed, out-of-support Python 3.7.0
+
+Install PostgreSQL
+brew install postgresql
+
+Install Node/Rect
+brew install node
+
+Startup PG server
+brew services run postgresql
+psql postgres
+\l
+\dt
+\q
+brew services stop postgresql
+
+
+/Users/dgies/PycharmProjects/HelloWorldFlask/.venv/bin/python -m flask run
+
+cd /Users/dgies/PycharmProjects/HelloWorldFlaskReact
+source .venv/bin/activate
+pip install Flask Flask-CORS # Install Flask and CORS for cross-origin requests
+pip install requests
+
+Make frontend
+npx create-react-app frontend
+cd frontend
+npm start
+
+Commit to github:
+https://github.com/dgies/HelloWorldFlaskReact/
+
+TODO:
+Make API endpoint that hits other REST API, returns values
+Make PG table to hold results
+Make React save results in DB
+Make react use DB as cache

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function App() {
   const [api_data, setApiData] = useState(null);
   const [time_data, setTime] = useState(null);
+  const [agify_data, setAgify] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -22,6 +23,13 @@ function App() {
           throw new Error(`HTTP error! status: ${time_response.status}`);
         }
         setTime(await time_response.json());
+
+        // Fetch from agify
+        const agify_response = await fetch('http://127.0.0.1:5000/agify/daniel'); // Replace with your actual endpoint 2
+        if (!agify_response.ok) {
+          throw new Error(`HTTP error! status: ${time_response.status}`);
+        }
+        setAgify(await agify_response.json());
 
       } catch (err) {
         setError(err);
@@ -49,6 +57,9 @@ function App() {
       <h1>Time Data:</h1>
       {/*<pre>{JSON.stringify(time_data, null, 2)}</pre>*/}
       <pre>{time_data['time']}</pre>
+
+      <h1>Agify:</h1>
+      <pre>{JSON.stringify(agify_data, null, 2)}</pre>
     </div>
   );
 }
