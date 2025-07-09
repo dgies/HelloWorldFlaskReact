@@ -53,6 +53,15 @@ Startup PG server
     source .venv/bin/activate
     pip install -r requirements.txt
 
+#### Setup Windows
+    
+    python -m venv .venv
+    cd C:\Users\dgies\dev\HelloWorldFlaskReact 
+    .\.venv\Scripts\activate
+    pip install -r requirements.txt
+    cd frontend
+    npm install
+
 ### Start backend
 
     cd /Users/dgies/PycharmProjects/HelloWorldFlaskReact
